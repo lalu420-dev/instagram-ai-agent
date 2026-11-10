@@ -1,8 +1,10 @@
-import random
+from flask import Flask
 
-messages = [
-    "Hello! Welcome to Instagram AI Agent",
-    "Thanks for contacting us!"
-]
+app = Flask(__name__)
 
-print(random.choice(messages))
+@app.route("/")
+def home():
+    return "Instagram AI Agent is running!"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)
